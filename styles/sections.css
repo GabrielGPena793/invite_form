@@ -1,0 +1,21 @@
+#banner {
+  padding: 32px;
+  background: url("../assets/Background.png") center/cover;
+  border-radius: 12px;
+
+  & img {
+    width: 2.875rem;
+    margin-bottom: 1rem;
+  }
+
+  & h1 {
+    font: var(--text-logo);
+    color: var(--pink);
+  }
+
+  & p {
+    font: var(--text-body-md);
+    color: var(--text-color-heading);
+    font-weight: 300;
+  }
+}
