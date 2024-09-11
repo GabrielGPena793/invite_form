@@ -19,3 +19,10 @@
     font-weight: 300;
   }
 }
+
+#form-invite {
+  background-color: var(--shape-body);
+  overflow: auto;
+
+  border-radius: 12px;
+}
