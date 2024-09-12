@@ -6,9 +6,121 @@ form {
   h2 {
     font: var(--text-heading-md);
     color: var(--text-color-heading);
+    margin-bottom: 2.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  input {
+    font: var(--text-body-md);
+  }
+}
+
+fieldset {
+  border: none;
+  gap: 1rem;
+
+  & legend {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    font: var(--text-heading-sm);
+    color: var(--text-color-heading);
+    margin-bottom: 1rem;
+
+    & img {
+      width: 1.5rem;
+    }
+  }
+}
+
+fieldset#event-about {
+  & .radio-wrapper {
+    display: flex;
+    padding: 4px;
+    background: var(--input-base);
+    border: 1px solid var(--input-stroke);
+    border-radius: 8px;
+  }
+
+  & .container-radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    padding-block: 0.75rem;
+
+    & label {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    & svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    & input[type="radio"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+    }
+
+    &:has(:checked) {
+      background-color: var(--shape-button);
+      font-weight: 600;
+      color: var(--text-color-heading);
+      border-radius: 4px;
+
+      & svg {
+        stroke: var(--brand-light);
+      }
+    }
+  }
+
+  & textarea {
+    all: unset;
+    height: 8.5rem;
+    background-color: var(--input-base);
+    padding: 1rem;
+    border: 1px solid var(--input-stroke);
+    border-radius: 8px;
+
+    font: var(--text-body-md);
+  }
+}
+
+input {
+  all: unset;
+  border: 1px solid var(--input-stroke);
+  border-radius: 8px;
+  padding: 0.8125rem 1rem;
+  background-color: var(--input-base);
+  width: -webkit-fill-available;
+
+  &:placeholder {
+    color: var(--input-placeholder);
+  }
+}
+
+input[type="datetime-local"] {
+  position: relative;
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+
+    all: unset;
+    position: absolute;
+    inset: 0;
   }
 }
 
 .input-wrapper {
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
 }

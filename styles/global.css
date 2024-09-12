@@ -51,6 +51,8 @@ body {
   background-color: var(--shape-background);
   padding: 1.25rem;
   overflow: hidden;
+  color: var(--text-color-body);
+  font: var(--text-body-xs);
 }
 
 .container {
@@ -65,4 +67,8 @@ body {
 
 .grid {
   display: grid;
+}
+
+.flex-1 {
+  flex: 1;
 }

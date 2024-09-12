@@ -2,6 +2,7 @@
   padding: 32px;
   background: url("../assets/Background.png") center/cover;
   border-radius: 12px;
+  height: 45.5rem;
 
   & img {
     width: 2.875rem;
@@ -23,6 +24,7 @@
 #form-invite {
   background-color: var(--shape-body);
   overflow: auto;
+  height: 100vh;
 
   border-radius: 12px;
 }
