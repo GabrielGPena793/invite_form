@@ -53,6 +53,9 @@ body {
   overflow: hidden;
   color: var(--text-color-body);
   font: var(--text-body-xs);
+
+  scrollbar-width: thin; /* Largura da barra de rolagem: auto, thin, none */
+  scrollbar-color: var(--input-stroke) var(--input-base);
 }
 
 .container {

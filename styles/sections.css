@@ -25,6 +25,5 @@
   background-color: var(--shape-body);
   overflow: auto;
   height: 100vh;
-
   border-radius: 12px;
 }
