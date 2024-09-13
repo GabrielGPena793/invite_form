@@ -16,6 +16,11 @@ form {
 
   input {
     font: var(--text-body-md);
+
+    &:focus,
+    &:focus-within {
+      outline: 1px solid var(--brand-light);
+    }
   }
 }
 
@@ -35,6 +40,10 @@ fieldset {
     & img {
       width: 1.5rem;
     }
+  }
+
+  & + fieldset {
+    margin-top: 3rem;
   }
 }
 
@@ -93,6 +102,240 @@ fieldset#event-about {
     border-radius: 8px;
 
     font: var(--text-body-md);
+
+    &:focus,
+    &:focus-within {
+      outline: 1px solid var(--brand-light);
+    }
+  }
+}
+
+fieldset#personalization {
+  display: grid;
+  gap: 1.75rem;
+
+  & .radio-inputs {
+    display: flex;
+    gap: 0.75rem;
+
+    & div {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: var(--shape-button);
+      border-radius: 50%;
+      padding: 6px;
+
+      position: relative;
+
+      & input[type="radio"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+      }
+
+      & div {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+
+      & .blue-light {
+        background-color: var(--brand-light);
+      }
+
+      & .blue-navy {
+        background-color: var(--navy);
+      }
+
+      & .purple {
+        background-color: var(--purple);
+      }
+
+      & .dark-pink {
+        background-color: var(--fuschia);
+      }
+
+      & .pink {
+        background-color: var(--pink);
+      }
+
+      & .dark-orange {
+        background-color: var(--danger);
+      }
+
+      & .orange {
+        background-color: var(--orange);
+      }
+
+      & .yellow {
+        background-color: var(--yellow);
+      }
+
+      & .lime {
+        background-color: var(--lime);
+      }
+
+      & .green {
+        background-color: var(--green);
+      }
+
+      & .cyan {
+        background-color: var(--cyan);
+      }
+
+      &:has(:checked) {
+        outline: 2px solid var(--brand-light);
+      }
+    }
+  }
+
+  & .radio-inputs-theme {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8.375rem, 1fr));
+    gap: 8px;
+
+    & div {
+      position: relative;
+      padding: 4px 4px 8px 4px;
+      background-color: var(--shape-button);
+      border-radius: 8px;
+      text-align: center;
+
+      & img {
+        width: 7.875rem;
+        border-radius: 4px;
+        margin-bottom: 8px;
+      }
+
+      & label {
+        font: var(--text-body-sm);
+        color: var(--text-color-heading);
+        margin-bottom: 0;
+      }
+
+      & input[type="radio"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+      }
+
+      &:has(:checked) {
+        outline: 2px solid var(--brand-light);
+      }
+    }
+  }
+
+  & .input-wrapper {
+    display: flex;
+    flex: 1;
+
+    & .checkbox-wrapper {
+      gap: 0.75rem;
+      flex: 1;
+      position: relative;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      & input[type="checkbox"] {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+      }
+
+      & .container-slide {
+        display: inline-block;
+        background: var(--input-base);
+        border: 1px solid var(--input-stroke);
+        padding: 4px;
+        width: 4rem;
+        border-radius: 999px;
+        transition: all 0.5s;
+
+        & .slide {
+          width: 1.5rem;
+          height: 1.5rem;
+          background: var(--input-stroke);
+          border-radius: 50%;
+        }
+
+        &:checked {
+          background-color: var(--brand-light);
+        }
+      }
+
+      & .file-wrapper {
+        flex: 2;
+      }
+
+      &:has(:checked) {
+        & .slide {
+          animation: slide 0.5s ease forwards;
+        }
+
+        & .container-slide {
+          background: var(--brand-light);
+        }
+      }
+
+      &:not(:has(:checked)) {
+        & .slide {
+          animation: slide-reverse 0.5s ease forwards;
+        }
+
+        & .container-slide {
+          background: var(--input-base);
+        }
+      }
+    }
+
+    & .file-wrapper {
+      flex: 2;
+
+      & div {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        & label {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font: var(--text-body-sm);
+          color: var(--text-color-heading);
+          padding: 0.625rem;
+          background: var(--shape-button);
+          border-radius: 8px;
+          margin-bottom: 0;
+
+          & svg {
+            width: 1rem;
+            height: 1rem;
+          }
+
+          &:hover {
+            background-color: var(--brand-light);
+            color: var(--text-color-heading);
+            cursor: pointer;
+
+            & svg {
+              stroke: var(--text-color-heading);
+            }
+          }
+        }
+
+        & span {
+          font: var(--text-body-md);
+          color: var(--input-placeholder);
+        }
+
+        & input[type="file"] {
+          display: none;
+        }
+      }
+    }
   }
 }
 
@@ -123,4 +366,23 @@ input[type="datetime-local"] {
 .input-wrapper {
   grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 1rem;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(130%);
+    background: var(--text-color-heading);
+  }
+}
+
+@keyframes slide-reverse {
+  0% {
+    transform: translateX(130%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
