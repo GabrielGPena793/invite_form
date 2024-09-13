@@ -356,7 +356,7 @@ fieldset#contact {
 
 #terms-wrapper {
   display: grid;
-  gap: 4px;
+  gap: 8px;
   border-top: 1px solid var(--input-stroke);
   padding-top: 2.5rem;
   padding-bottom: 3rem;
