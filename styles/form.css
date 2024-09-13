@@ -354,6 +354,49 @@ fieldset#contact {
   }
 }
 
+#terms-wrapper {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid var(--input-stroke);
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+
+  & > div {
+    position: relative;
+    display: flex;
+    gap: 0.75rem;
+
+    &:has(:checked) {
+      & .box-check {
+        border-color: var(--brand-light);
+        background-image: url("../assets/icons/check.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+
+  & input[type="checkbox"] {
+    all: unset;
+    position: absolute;
+    inset: 0;
+  }
+
+  & .box-check {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--input-base);
+    border: 1px solid var(--input-stroke);
+    border-radius: 4px;
+  }
+
+  & strong {
+    color: var(--brand-light);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
+
 input {
   all: unset;
   border: 1px solid var(--input-stroke);
